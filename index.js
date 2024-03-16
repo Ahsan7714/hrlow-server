@@ -28,6 +28,11 @@ const admin = require('./routes/adminRoutes')
 app.use('/api/v1', admin);
 
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+});
+
+
 // Catch-all route to serve index.html
 // app.get("*", function (_, res) {
 //   res.sendFile(
