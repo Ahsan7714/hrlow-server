@@ -13,7 +13,7 @@ app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 app.use(
   cors({
-    origin: ["https://hrlow-server.vercel.app"],
+    origin: ["https://hrlow-server.vercel.app","https://hrflow-client.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
