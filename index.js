@@ -7,21 +7,21 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser');
 const path = require('path');
 
-connectDB();
 
 // Serve static files from the client/dist directory
-// app.use('/images', express.static(path.join(__dirname, 'public/images')));
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 app.use(
   cors({
-    // origin: ["http://localhost:5173"],
+    origin: ["https://hrlow-server.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
   );
+  connectDB();
   app.use(cookieParser());
   app.use(express.json());
-  app.use(express.static(path.join(__dirname, "../client/dist")));
+  // app.use(express.static(path.join(__dirname, "../client/dist")));
 
  
 const admin = require('./routes/adminRoutes')
