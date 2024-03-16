@@ -10,7 +10,7 @@ const path = require('path');
 connectDB();
 
 // Serve static files from the client/dist directory
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
+// app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 app.use(
   cors({
@@ -29,14 +29,14 @@ app.use('/api/v1', admin);
 
 
 // Catch-all route to serve index.html
-app.get("*", function (_, res) {
-  res.sendFile(
-    path.join(__dirname, "../client/dist/index.html"),
-    function (err) {
-      res.status(500).send(err);
-    }
-  );
-});
+// app.get("*", function (_, res) {
+//   res.sendFile(
+//     path.join(__dirname, "../client/dist/index.html"),
+//     function (err) {
+//       res.status(500).send(err);
+//     }
+//   );
+// });
 
 
 app.listen(port, () => {
